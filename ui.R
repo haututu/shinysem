@@ -1,4 +1,6 @@
 ui <- dashboardPage(
+    # Allows show/hide
+    shinyjs::useShinyjs(),
     
     # Header
     dashboardHeader(title = "Basic dashboard"),
