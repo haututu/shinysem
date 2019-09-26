@@ -8,7 +8,7 @@ ui <- dashboardPage(
         sidebarMenu(
             menuItem("Prepare data", tabName = "prepare", icon = icon("table")),
             menuItem("Construct model", tabName = "model", icon = icon("fas fa-sitemap")),
-            menuItem("Analyse results", tabName = "model", icon = icon("fas fa-file-signature"))
+            menuItem("Analyse results", tabName = "results", icon = icon("fas fa-file-signature"))
         )
     ),
     
