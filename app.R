@@ -47,3 +47,5 @@ server <- function(input, output) {
 
 # Run the application 
 shinyApp(ui = ui, server = server)
+
+git remote add origin https://github.com/bensoltoff/myrepo.git
