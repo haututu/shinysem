@@ -1,6 +1,4 @@
 ui <- dashboardPage(
-    # Allows show/hide
-    shinyjs::useShinyjs(),
     
     # Header
     dashboardHeader(title = "Basic dashboard"),
@@ -16,6 +14,9 @@ ui <- dashboardPage(
     
     # Body
     dashboardBody(
+        # Allows show/hide
+        useShinyjs(),
+        
         ### changing theme
         shinyDashboardThemes(
             theme = "blue_gradient"

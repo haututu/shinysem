@@ -9,17 +9,24 @@ effectBuilderUI <- function(id) {
            uiOutput(ns("effect_2"))),
     column(width = 2,
            uiOutput(ns("effect_3"))),
-    column(width = 2,
+    column(width = 1,
            uiOutput(ns("effect_4"))),
     column(width = 2,
            uiOutput(ns("effect_5"))),
+    column(width = 1,
+           uiOutput(ns("effect_6"))),
     column(width = 2,
+           uiOutput(ns("effect_7"))),
+    column(width = 1,
            actionButton("add", "Add"))
     )
   }
 
 # Server elements to effect builder
 effectBuilder <- function(input, output, session) {
+  
+  ns <- session$ns
+  
   output$variables <- renderUI({
     selectizeInput("variables",
                    NULL,
@@ -29,21 +36,42 @@ effectBuilder <- function(input, output, session) {
     })
   
   output$effect_2 <- renderUI({
-    p(" is a ")
+    p("is a")
     })
   
   output$effect_3 <- renderUI({
-    selectizeInput("effect",
+    selectizeInput(ns("effect"),
                    NULL,
-                   choices = c("mediator", "moderator", "latent variable")
+                   selected = "effect",
+                   choices = c("effect"="", "mediator", "moderator", "latent variable")
                    )
     })
   
   output$effect_4 <- renderUI({
-    p("d")
+    p("betweem")
     })
   
   output$effect_5 <- renderUI({
-    p("e")
+    selectizeInput("predictor",
+                   NULL,
+                   selected = "predictor",
+                   choices = c("predictor" = "", "X", "Y", "Z")
+    )
     })
+  
+  output$effect_6 <- renderUI({
+    p("and")
+  })
+  
+  output$effect_7 <- renderUI({
+    selectizeInput("outcome",
+                   NULL,
+                   selected = "outcome",
+                   choices = c("outcome" = "", "X", "Y", "Z")
+    )
+  })
+  
+  # Example to show hide the inputs dynamically for effects
+  # Note you need the ns() stuff as in effect_3
+  #observe(shinyjs::toggle("effect_4", condition = input$effect != ""))
   }
