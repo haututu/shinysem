@@ -27,7 +27,7 @@ modelTab <- tabItem(tabName = "model",
                       tabBox(
                         title = "Model",
                         # I need to add code for the panel IDs so we can parse info to server
-                        tabPanel("Plot", "First tab content"),
+                        tabPanel("Plot", semPlotterUI("semPlotter")),
                         tabPanel("Code", "Tab content 2")
                         )
                       )

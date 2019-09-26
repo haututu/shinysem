@@ -3,12 +3,12 @@
 effectBuilderUI <- function(id) {
   ns <- NS(id)
   fluidRow(
-    column(width = 2,
+    column(width = 1,
            uiOutput(ns("variables"))),
     column(width = 1,
            uiOutput(ns("effect_2"))),
     column(width = 2,
-           uiOutput(ns("effect_3"))),
+           uiOutput(ns("effect"))),
     column(width = 1,
            uiOutput(ns("effect_4"))),
     column(width = 2,
@@ -16,7 +16,7 @@ effectBuilderUI <- function(id) {
     column(width = 1,
            uiOutput(ns("effect_6"))),
     column(width = 2,
-           uiOutput(ns("effect_7"))),
+           uiOutput(ns("outcome"))),
     column(width = 1,
            actionButton("add", "Add"))
     )
@@ -39,7 +39,7 @@ effectBuilder <- function(input, output, session) {
     p("is a")
     })
   
-  output$effect_3 <- renderUI({
+  output$effect <- renderUI({
     selectizeInput(ns("effect"),
                    NULL,
                    selected = "effect",
@@ -48,7 +48,7 @@ effectBuilder <- function(input, output, session) {
     })
   
   output$effect_4 <- renderUI({
-    p("betweem")
+    p("between")
     })
   
   output$effect_5 <- renderUI({
@@ -63,7 +63,7 @@ effectBuilder <- function(input, output, session) {
     p("and")
   })
   
-  output$effect_7 <- renderUI({
+  output$outcome <- renderUI({
     selectizeInput("outcome",
                    NULL,
                    selected = "outcome",

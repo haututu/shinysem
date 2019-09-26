@@ -8,4 +8,5 @@ server <- function(input, output) {
   })
   
   callModule(effectBuilder, "builder")
+  callModule(semPlotter, "semPlotter")
 }
