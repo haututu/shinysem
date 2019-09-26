@@ -5,14 +5,11 @@ modelTab <- tabItem(tabName = "model",
                       box(
                         status = "primary",
                         title = "Effect builder",
-                        fluidRow(
                             # Still figuring out what UI element will be used to capture effects, a combination of dropdowns with a text stem updated to the left of it ?
                           box(
                             width=12,
-                            "This is where you will build effects"
-                            )
+                            effectBuilderUI("builder")
                           ),
-                        fluidRow(
                             # This will need to be a selectizeInput below and the selected options get populated as effects get added
                           box(
                             width=12,
@@ -23,7 +20,7 @@ modelTab <- tabItem(tabName = "model",
                                            multiple=TRUE,
                                            options=list(plugins=list('drag_drop','remove_button')))
                             )
-                          ) 
+                           
                         ),
                       
                       # Plot box and lavaan code  

@@ -6,4 +6,6 @@ server <- function(input, output) {
     data <- histdata[seq_len(input$slider)]
     hist(data)
   })
+  
+  callModule(effectBuilder, "builder")
 }
