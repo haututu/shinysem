@@ -1,4 +1,4 @@
-modelTab <- tabItem(tabName = "model",
+pathTab <- tabItem(tabName = "path",
                     # This fluid row contains the effect builder and plot boxes
                     fluidRow(
                       # Effect builder

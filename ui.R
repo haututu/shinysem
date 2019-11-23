@@ -1,14 +1,14 @@
 ui <- dashboardPage(
     
     # Header
-    dashboardHeader(title = "Basic dashboard"),
+    dashboardHeader(title = "Shiny SEM"),
     
     # Sidebar
     dashboardSidebar(
         sidebarMenu(
             menuItem("Prepare data", tabName = "prepare", icon = icon("table")),
-            menuItem("Construct model", tabName = "model", icon = icon("fas fa-sitemap")),
-            menuItem("Analyse results", tabName = "results", icon = icon("fas fa-file-signature"))
+            menuItem("Path modelling", tabName = "path", icon = icon("fas fa-sitemap")),
+            menuItem("LPA/LCA", tabName = "lpa", icon = icon("fas fa-file-signature"))
         )
     ),
     
@@ -27,10 +27,10 @@ ui <- dashboardPage(
             prepareTab,
             
             # Construct a model
-            modelTab,
+            pathTab,
             
             # Show results
-            resultsTab
+            lpaTab
             
         )
     )
