@@ -7,6 +7,14 @@ server <- function(input, output) {
     hist(data)
   })
   
+  observeEvent(input$loadData, {
+    showModal(modalDialog(
+      title = "Important message",
+      "This is an important message!",
+      fileInput("dataInput", "Select file", accept = NULL, width = NULL)
+    ))
+  })
+  
   callModule(effectBuilder, "builder")
   callModule(semPlotter, "semPlotter")
 }

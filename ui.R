@@ -1,7 +1,11 @@
 ui <- dashboardPage(
     
     # Header
-    dashboardHeader(title = "Shiny SEM"),
+    dashboardHeader(title = "Shiny SEM",
+                    tags$li(class = "dropdown", actionLink("loadData", "Load Data", style="color:black")),
+                    tags$li(class = "dropdown", actionLink("loadModel", "Load Model", style="color:black")),
+                    tags$li(class = "dropdown", actionLink("saveModel", "Save Model", style="color:black"))
+                    ),
     
     # Sidebar
     dashboardSidebar(
