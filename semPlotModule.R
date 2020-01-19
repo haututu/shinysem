@@ -12,7 +12,7 @@ semPlotter <- function(input, output, session) {
   
   # This should perhaps be in openMX, more flexible.
   output$semPlotter <- renderPlot({
-    test.fit <- lavaan::sem("y ~ x + m + mod:x
+    test.fit <- lavaan::sem("y ~ x + m
             m ~ x",
                             data = data.frame(x = rnorm(10), m = rnorm(10), y = rnorm(10), mod = rnorm(10)))
     
