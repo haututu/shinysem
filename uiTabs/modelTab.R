@@ -17,6 +17,8 @@ modelTab <- tabItem(tabName = "model",
                                            "Effects in model",
                                            choices = c("M mediates X and Y",
                                                        "Y is the outcome"),
+                                           selected = c("M mediates X and Y",
+                                                        "Y is the outcome"),
                                            multiple=TRUE,
                                            options=list(plugins=list('drag_drop','remove_button')))
                             )

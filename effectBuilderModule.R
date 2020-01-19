@@ -2,24 +2,22 @@
 # UI elements to effect builder
 effectBuilderUI <- function(id) {
   ns <- NS(id)
-  fluidRow(
-    column(width = 1,
-           uiOutput(ns("variables"))),
-    column(width = 1,
-           uiOutput(ns("effect_2"))),
-    column(width = 2,
-           uiOutput(ns("effect"))),
-    column(width = 1,
-           uiOutput(ns("effect_4"))),
-    column(width = 2,
-           uiOutput(ns("effect_5"))),
-    column(width = 1,
-           uiOutput(ns("effect_6"))),
-    column(width = 2,
-           uiOutput(ns("outcome"))),
-    column(width = 1,
-           actionButton("add", "Add"))
-    )
+  fluidPage(
+    fluidRow(
+      p(strong("Effect builder"))
+    ),
+    fluidRow(
+      uiOutput(ns("variables"), style = "display: inline-block;vertical-align:top;"),
+      uiOutput(ns("effect_2"), style = "display: inline-block;vertical-align:top;padding-top: 5px;"),
+      uiOutput(ns("effect"), style = "display: inline-block;vertical-align:top;"),
+      uiOutput(ns("effect_4"), style = "display: inline-block;vertical-align:top;padding-top: 5px;"),
+      uiOutput(ns("effect_5"), style = "display: inline-block;vertical-align:top;"),
+      uiOutput(ns("effect_6"), style = "display: inline-block;vertical-align:top;padding-top: 5px;"),
+      uiOutput(ns("outcome"), style = "display: inline-block;vertical-align:top;"),
+      actionButton("add", "Add", style = "display: inline-block;vertical-align:top; float:right"),
+      style = "padding: 0px 20px 0px 20px"
+    ) 
+  )
   }
 
 # Server elements to effect builder
